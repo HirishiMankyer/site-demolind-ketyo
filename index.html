@@ -7,193 +7,690 @@
   <title>Demolind Ketyo | Light Novel/RPG</title>
 
   <style>
+    :root {
+      --bg-main: #05060d;
+      --bg-card: rgba(17, 20, 35, 0.82);
+      --bg-card-soft: rgba(255, 255, 255, 0.045);
+      --gold: #d8b765;
+      --gold-soft: #8f7440;
+      --text-main: #f4efe3;
+      --text-muted: #b8ad99;
+      --line: rgba(216, 183, 101, 0.28);
+      --blue: #72a8ff;
+      --violet: #8f6cff;
+      --shadow: rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: #080911;
-      color: #f2efe6;
+      background:
+        radial-gradient(circle at top left, rgba(114, 168, 255, 0.13), transparent 34%),
+        radial-gradient(circle at top right, rgba(143, 108, 255, 0.11), transparent 30%),
+        linear-gradient(180deg, #0a0c18 0%, #05060d 55%, #03040a 100%);
+      color: var(--text-main);
     }
 
-    header {
-      background: linear-gradient(to bottom, #111425, #080911);
-      border-bottom: 1px solid #b9964a;
-      padding: 80px 20px;
-      text-align: center;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 48px;
-      letter-spacing: 4px;
-      color: #d8b765;
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 6, 13, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-symbol {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 22px rgba(216, 183, 101, 0.22);
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      place-items: center;
+      padding: 90px 22px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(216, 183, 101, 0.16);
+      border-radius: 50%;
+      top: 120px;
+      right: -160px;
+      box-shadow:
+        inset 0 0 80px rgba(216, 183, 101, 0.05),
+        0 0 90px rgba(114, 168, 255, 0.08);
+    }
+
+    .hero-content {
+      max-width: 1180px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 42px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      background: rgba(216, 183, 101, 0.06);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    header p {
-      margin-top: 12px;
+    .hero h1 {
+      margin: 24px 0 14px;
+      font-size: clamp(46px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-main);
+      text-shadow: 0 0 32px rgba(216, 183, 101, 0.16);
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      display: block;
+    }
+
+    .subtitle {
+      max-width: 720px;
       font-size: 20px;
-      color: #d7d0c0;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 30px;
     }
 
-    nav {
-      background: #0d0f1c;
-      border-bottom: 1px solid #3b321f;
-      text-align: center;
-      padding: 14px;
-    }
-
-    nav a {
-      color: #d8b765;
-      text-decoration: none;
-      margin: 0 14px;
-      font-size: 16px;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid #4a3b21;
-      border-radius: 10px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
-    }
-
-    h2 {
-      color: #d8b765;
-      border-bottom: 1px solid #4a3b21;
-      padding-bottom: 10px;
-      margin-top: 0;
-      font-size: 28px;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 17px;
-      color: #e7e1d2;
-    }
-
-    .buttons {
-      margin-top: 28px;
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .button {
-      display: inline-block;
-      padding: 12px 22px;
-      margin: 8px;
-      border: 1px solid #d8b765;
-      border-radius: 6px;
-      color: #d8b765;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      color: #080911;
+      background: linear-gradient(135deg, #f0d98d, #b99243);
       text-decoration: none;
-      background: rgba(216, 183, 101, 0.08);
+      font-weight: bold;
+      box-shadow: 0 10px 24px rgba(216, 183, 101, 0.16);
       transition: 0.2s;
     }
 
     .button:hover {
-      background: #d8b765;
-      color: #080911;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(216, 183, 101, 0.22);
     }
 
-    footer {
+    .button.secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--gold);
+      box-shadow: none;
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025)),
+        rgba(10, 12, 24, 0.82);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 24px 80px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -80px -120px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(216,183,101,0.16), transparent 70%);
+    }
+
+    .sigil {
+      width: 150px;
+      height: 150px;
+      margin: 10px auto 28px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      position: relative;
+      color: var(--gold);
+      font-size: 46px;
+      box-shadow: 0 0 44px rgba(216, 183, 101, 0.16);
+    }
+
+    .sigil::before,
+    .sigil::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(216, 183, 101, 0.26);
+    }
+
+    .sigil::before {
+      inset: 18px;
+    }
+
+    .sigil::after {
+      inset: 36px;
+      border-color: rgba(114, 168, 255, 0.24);
+    }
+
+    .panel-title {
+      color: var(--gold);
+      font-size: 22px;
+      margin: 0 0 12px;
       text-align: center;
-      padding: 30px 20px;
-      color: #91866f;
-      border-top: 1px solid #3b321f;
-      background: #070812;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .panel-text {
+      color: var(--text-muted);
+      line-height: 1.7;
+      text-align: center;
+      margin: 0;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px 22px 80px;
+    }
+
+    .section {
+      margin: 38px 0;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--bg-card);
+      box-shadow: 0 22px 70px var(--shadow);
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      color: var(--text-main);
+    }
+
+    .section p {
+      color: var(--text-muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      border: 1px solid rgba(216, 183, 101, 0.18);
+      background: var(--bg-card-soft);
+      border-radius: 16px;
+      padding: 22px;
+      min-height: 190px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(216, 183, 101, 0.42);
+      background: rgba(255,255,255,0.065);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+      background: rgba(216, 183, 101, 0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 21px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .chapter-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      border: 1px solid rgba(216, 183, 101, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .chapter-box h3 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    .chapter-box p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid rgba(216, 183, 101, 0.22);
+      background: rgba(216, 183, 101, 0.06);
+      color: var(--gold);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 22px;
+      text-align: center;
+      background: rgba(0,0,0,0.26);
+      color: var(--text-muted);
+    }
+
+    .footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chapter-box {
+        grid-template-columns: 1fr;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Demolind Ketyo</h1>
-    <p>Light Novel/RPG</p>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#inicio">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Light Novel/RPG</span>
+        </div>
+      </a>
 
-    <div class="buttons">
-      <a class="button" href="#sobre">Sobre a Obra</a>
-      <a class="button" href="#capitulos">Capítulos</a>
-      <a class="button" href="#universo">Universo</a>
-      <a class="button" href="#wiki">Wiki</a>
-    </div>
+      <div class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#capitulos">Capítulos</a>
+        <a href="#universo">Universo</a>
+        <a href="#personagens">Personagens</a>
+        <a href="#wiki">Wiki</a>
+      </div>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#capitulos">Capítulos</a>
-    <a href="#personagens">Personagens</a>
-    <a href="#universo">Universo</a>
-    <a href="#wiki">Wiki</a>
-  </nav>
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow">Obra original • Universo expandido</div>
+
+        <h1>Demolind <span>Ketyo</span></h1>
+
+        <p class="subtitle">
+          Uma Light Novel/RPG ambientada em um universo vasto, onde destinos,
+          entidades superiores, sistemas de poder e conflitos sobrenaturais
+          moldam a queda e a ascensão de mundos.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button" href="#capitulos">Ler Capítulos</a>
+          <a class="button secondary" href="#universo">Explorar Universo</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <div class="sigil">DK</div>
+        <h2 class="panel-title">Arquivo Oficial</h2>
+        <p class="panel-text">
+          Registro central dedicado à apresentação da obra, seus personagens,
+          capítulos, conceitos fundamentais e materiais complementares.
+        </p>
+      </aside>
+    </div>
+  </section>
 
   <main>
 
-    <section id="sobre">
-      <h2>Sobre a Obra</h2>
+    <section class="section" id="sobre">
+      <div class="section-header">
+        <div class="section-kicker">Introdução</div>
+        <h2>Sobre a Obra</h2>
+      </div>
+
       <p>
-        Demolind Ketyo é uma obra de Light Novel/RPG ambientada em um universo vasto,
-        marcado por conflitos sobrenaturais, sistemas de poder, entidades superiores
-        e acontecimentos que atravessam mundos, eras e dimensões.
+        <strong>Demolind Ketyo</strong> é uma obra de Light Novel/RPG construída
+        sobre um universo de fantasia, mistério e conflitos sobrenaturais. A
+        narrativa acompanha personagens envolvidos em disputas que ultrapassam a
+        simples sobrevivência, explorando temas como destino, evolução, poder,
+        identidade, sacrifício e a influência de forças ocultas sobre a história.
       </p>
+
       <p>
-        A narrativa acompanha personagens envolvidos em disputas que ultrapassam a
-        simples sobrevivência, explorando temas como destino, evolução, sacrifício,
-        identidade, poder e a influência de forças ocultas sobre a história do universo.
+        Este site funciona como a porta de entrada oficial para a obra, reunindo
+        informações essenciais sobre seus capítulos, personagens, conceitos,
+        sistemas de poder, regiões, organizações e registros importantes do
+        universo.
       </p>
+
+      <div class="tag-list">
+        <span class="tag">Fantasia</span>
+        <span class="tag">Aventura</span>
+        <span class="tag">Mistério</span>
+        <span class="tag">Sistemas de Poder</span>
+        <span class="tag">Universo Expandido</span>
+      </div>
     </section>
 
-    <section id="capitulos">
-      <h2>Capítulos</h2>
+    <section class="section" id="capitulos">
+      <div class="section-header">
+        <div class="section-kicker">Leitura</div>
+        <h2>Capítulos</h2>
+      </div>
+
       <p>
-        Esta área será dedicada à organização dos capítulos da obra, podendo ser
-        separada por arcos, volumes, temporadas ou fases narrativas.
+        A área de capítulos será dedicada à organização da obra por arcos,
+        volumes ou fases narrativas, permitindo acompanhar a progressão da
+        história de forma clara e acessível.
       </p>
+
+      <div class="chapter-box">
+        <div>
+          <h3>Capítulos em desenvolvimento</h3>
+          <p>
+            Em breve, esta seção poderá receber links diretos para os capítulos,
+            resumos de arcos, ordem de leitura e materiais complementares.
+          </p>
+        </div>
+
+        <a class="button secondary" href="#wiki">Ver Wiki</a>
+      </div>
     </section>
 
-    <section id="personagens">
-      <h2>Personagens</h2>
+    <section class="section" id="universo">
+      <div class="section-header">
+        <div class="section-kicker">Mitologia</div>
+        <h2>Universo de Demolind Ketyo</h2>
+      </div>
+
       <p>
-        Aqui serão apresentados os principais personagens de Demolind Ketyo, com
-        descrições resumidas, imagens, funções na história e links para páginas mais
-        completas.
+        O universo da obra é formado por planetas, continentes, entidades,
+        sistemas espirituais, civilizações, organizações e eventos históricos que
+        moldam a estrutura narrativa de Demolind Ketyo.
       </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">✦</div>
+          <h3>Sistemas de Poder</h3>
+          <p>
+            Conceitos, técnicas, energias, classificações e formas de ascensão
+            utilizadas pelos personagens dentro da obra.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">◎</div>
+          <h3>Mundos e Regiões</h3>
+          <p>
+            Planetas, continentes, cidades, territórios e locais importantes que
+            compõem a geografia do universo.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">♜</div>
+          <h3>Organizações</h3>
+          <p>
+            Facções, grupos, instituições e forças políticas ou sobrenaturais que
+            influenciam os acontecimentos centrais.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section id="universo">
-      <h2>Universo</h2>
+    <section class="section" id="personagens">
+      <div class="section-header">
+        <div class="section-kicker">Elenco</div>
+        <h2>Personagens</h2>
+      </div>
+
       <p>
-        Esta seção reunirá informações sobre planetas, continentes, eras históricas,
-        sistemas de poder, organizações, espécies, divindades e demais conceitos que
-        compõem a mitologia de Demolind Ketyo.
+        Esta seção apresentará os personagens principais e secundários da obra,
+        incluindo suas funções narrativas, relações, habilidades, afiliações e
+        desenvolvimento ao longo da história.
       </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">I</div>
+          <h3>Protagonistas</h3>
+          <p>
+            Personagens centrais que conduzem os principais conflitos e arcos da
+            narrativa.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">II</div>
+          <h3>Aliados</h3>
+          <p>
+            Figuras que influenciam a jornada dos protagonistas, oferecendo apoio,
+            rivalidade ou orientação.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">III</div>
+          <h3>Antagonistas</h3>
+          <p>
+            Forças opostas, inimigos, entidades ou organizações que movimentam os
+            conflitos da obra.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section id="wiki">
-      <h2>Wiki Oficial</h2>
+    <section class="section" id="wiki">
+      <div class="section-header">
+        <div class="section-kicker">Enciclopédia</div>
+        <h2>Wiki Oficial</h2>
+      </div>
+
       <p>
-        A wiki funcionará como uma enciclopédia completa do universo da obra, reunindo
-        informações aprofundadas sobre personagens, poderes, locais, eventos e conceitos.
+        A wiki funcionará como uma enciclopédia completa do universo de Demolind
+        Ketyo, reunindo informações aprofundadas sobre personagens, poderes,
+        locais, espécies, eventos históricos, objetos, organizações e conceitos
+        centrais.
       </p>
-      <p>
-        Em breve, esta área poderá receber o link direto para a wiki oficial de
-        Demolind Ketyo.
-      </p>
+
+      <div class="chapter-box">
+        <div>
+          <h3>Link da Wiki</h3>
+          <p>
+            Quando desejar, substituiremos este trecho pelo endereço oficial da
+            sua wiki no Fandom.
+          </p>
+        </div>
+
+        <a class="button" href="#">Acessar Wiki</a>
+      </div>
     </section>
 
   </main>
 
-  <footer>
-    <p>© Demolind Ketyo — Site oficial da Light Novel/RPG.</p>
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Site oficial da Light Novel/RPG.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
