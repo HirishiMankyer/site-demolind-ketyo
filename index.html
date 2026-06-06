@@ -352,6 +352,8 @@
       padding: 22px;
       min-height: 190px;
       transition: 0.2s;
+      text-decoration: none;
+      display: block;
     }
 
     .card:hover {
@@ -423,6 +425,29 @@
       font-size: 13px;
     }
 
+    .record-list {
+      margin-top: 20px;
+      border-top: 1px solid rgba(216, 183, 101, 0.18);
+    }
+
+    .record-item {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(216, 183, 101, 0.14);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+    }
+
+    .record-item strong {
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .record-item span {
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
     .footer {
       border-top: 1px solid var(--line);
       padding: 34px 22px;
@@ -445,6 +470,10 @@
       }
 
       .chapter-box {
+        grid-template-columns: 1fr;
+      }
+
+      .record-item {
         grid-template-columns: 1fr;
       }
 
@@ -474,9 +503,10 @@
       <div class="menu">
         <a href="#sobre">Sobre</a>
         <a href="#capitulos">Capítulos</a>
-        <a href="#universo">Universo</a>
+        <a href="#enciclopedia">Enciclopédia</a>
         <a href="#personagens">Personagens</a>
-        <a href="#wiki">Wiki</a>
+        <a href="#poderes">Poderes</a>
+        <a href="#mundos">Mundos</a>
       </div>
     </nav>
   </header>
@@ -484,7 +514,7 @@
   <section class="hero" id="inicio">
     <div class="hero-content">
       <div>
-        <div class="eyebrow">Obra original • Universo expandido</div>
+        <div class="eyebrow">Obra original • Arquivo enciclopédico</div>
 
         <h1>Demolind <span>Ketyo</span></h1>
 
@@ -496,7 +526,7 @@
 
         <div class="hero-buttons">
           <a class="button" href="#capitulos">Ler Capítulos</a>
-          <a class="button secondary" href="#universo">Explorar Universo</a>
+          <a class="button secondary" href="#enciclopedia">Explorar Enciclopédia</a>
         </div>
       </div>
 
@@ -504,8 +534,8 @@
         <div class="sigil">DK</div>
         <h2 class="panel-title">Arquivo Oficial</h2>
         <p class="panel-text">
-          Registro central dedicado à apresentação da obra, seus personagens,
-          capítulos, conceitos fundamentais e materiais complementares.
+          Registro central dedicado à obra, seus capítulos, personagens, clãs,
+          deuses, poderes, mundos, organizações e demais conteúdos do universo.
         </p>
       </aside>
     </div>
@@ -528,10 +558,10 @@
       </p>
 
       <p>
-        Este site funciona como a porta de entrada oficial para a obra, reunindo
-        informações essenciais sobre seus capítulos, personagens, conceitos,
-        sistemas de poder, regiões, organizações e registros importantes do
-        universo.
+        Este site funciona como a porta de entrada oficial e também como
+        enciclopédia própria da obra, reunindo informações essenciais sobre seus
+        capítulos, personagens, clãs, divindades, sistemas de poder, regiões,
+        organizações, espécies e registros importantes do universo.
       </p>
 
       <div class="tag-list">
@@ -540,6 +570,7 @@
         <span class="tag">Mistério</span>
         <span class="tag">Sistemas de Poder</span>
         <span class="tag">Universo Expandido</span>
+        <span class="tag">Enciclopédia Oficial</span>
       </div>
     </section>
 
@@ -564,117 +595,295 @@
           </p>
         </div>
 
-        <a class="button secondary" href="#wiki">Ver Wiki</a>
+        <a class="button secondary" href="#enciclopedia">Ver Enciclopédia</a>
       </div>
     </section>
 
-    <section class="section" id="universo">
+    <section class="section" id="enciclopedia">
       <div class="section-header">
-        <div class="section-kicker">Mitologia</div>
-        <h2>Universo de Demolind Ketyo</h2>
+        <div class="section-kicker">Arquivos Oficiais</div>
+        <h2>Enciclopédia de Demolind Ketyo</h2>
       </div>
 
       <p>
-        O universo da obra é formado por planetas, continentes, entidades,
-        sistemas espirituais, civilizações, organizações e eventos históricos que
-        moldam a estrutura narrativa de Demolind Ketyo.
+        A enciclopédia de <strong>Demolind Ketyo</strong> reúne os principais
+        registros do universo da obra, funcionando como um arquivo oficial sobre
+        personagens, clãs, deuses, poderes, mundos, organizações, espécies,
+        eventos históricos e demais conceitos centrais.
+      </p>
+
+      <p>
+        Cada seção será organizada como um conjunto de verbetes, permitindo
+        consultar informações específicas sobre a mitologia, a história, os
+        sistemas de poder e os elementos fundamentais que compõem a narrativa.
       </p>
 
       <div class="grid">
-        <article class="card">
-          <div class="card-icon">✦</div>
-          <h3>Sistemas de Poder</h3>
+        <a class="card" href="#personagens">
+          <div class="card-icon">☉</div>
+          <h3>Personagens</h3>
           <p>
-            Conceitos, técnicas, energias, classificações e formas de ascensão
-            utilizadas pelos personagens dentro da obra.
+            Registros sobre protagonistas, aliados, antagonistas e figuras
+            importantes do universo da obra.
           </p>
-        </article>
+        </a>
 
-        <article class="card">
+        <a class="card" href="#clas">
+          <div class="card-icon">♜</div>
+          <h3>Clãs e Organizações</h3>
+          <p>
+            Informações sobre linhagens, facções, instituições, grupos e forças
+            que influenciam os acontecimentos da história.
+          </p>
+        </a>
+
+        <a class="card" href="#poderes">
+          <div class="card-icon">✦</div>
+          <h3>Poderes e Sistemas</h3>
+          <p>
+            Explicações sobre energias, técnicas, classificações, divindades,
+            ascensões e sistemas sobrenaturais.
+          </p>
+        </a>
+
+        <a class="card" href="#deuses">
+          <div class="card-icon">◇</div>
+          <h3>Deuses e Entidades</h3>
+          <p>
+            Arquivos sobre divindades, seres superiores, entidades espirituais e
+            forças que moldam a estrutura do universo.
+          </p>
+        </a>
+
+        <a class="card" href="#mundos">
           <div class="card-icon">◎</div>
           <h3>Mundos e Regiões</h3>
           <p>
-            Planetas, continentes, cidades, territórios e locais importantes que
-            compõem a geografia do universo.
+            Registros sobre planetas, continentes, cidades, territórios e locais
+            relevantes para a geografia da obra.
           </p>
-        </article>
+        </a>
 
-        <article class="card">
-          <div class="card-icon">♜</div>
-          <h3>Organizações</h3>
+        <a class="card" href="#cronologia">
+          <div class="card-icon">⌛</div>
+          <h3>Cronologia</h3>
           <p>
-            Facções, grupos, instituições e forças políticas ou sobrenaturais que
-            influenciam os acontecimentos centrais.
+            Organização de eras, eventos históricos, guerras, marcos universais e
+            acontecimentos importantes da narrativa.
           </p>
-        </article>
+        </a>
       </div>
     </section>
 
     <section class="section" id="personagens">
       <div class="section-header">
-        <div class="section-kicker">Elenco</div>
+        <div class="section-kicker">Verbetes</div>
         <h2>Personagens</h2>
       </div>
 
       <p>
-        Esta seção apresentará os personagens principais e secundários da obra,
-        incluindo suas funções narrativas, relações, habilidades, afiliações e
-        desenvolvimento ao longo da história.
+        Esta seção será dedicada aos personagens de <strong>Demolind Ketyo</strong>,
+        incluindo protagonistas, aliados, antagonistas, figuras lendárias e
+        personagens secundários importantes para o desenvolvimento da obra.
+      </p>
+
+      <div class="record-list">
+        <div class="record-item">
+          <strong>Protagonistas</strong>
+          <span>Personagens centrais que conduzem os principais conflitos, arcos e transformações da narrativa.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Aliados</strong>
+          <span>Figuras que auxiliam, orientam, protegem ou influenciam diretamente a jornada dos protagonistas.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Antagonistas</strong>
+          <span>Inimigos, rivais, entidades ou organizações que representam oposição direta aos objetivos centrais da história.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="clas">
+      <div class="section-header">
+        <div class="section-kicker">Linhagens e Facções</div>
+        <h2>Clãs e Organizações</h2>
+      </div>
+
+      <p>
+        Esta área reunirá informações sobre clãs, famílias, linhagens, grupos,
+        ordens, instituições, facções e demais organizações que exercem influência
+        política, espiritual, militar ou sobrenatural dentro do universo da obra.
       </p>
 
       <div class="grid">
         <article class="card">
           <div class="card-icon">I</div>
-          <h3>Protagonistas</h3>
+          <h3>Clãs</h3>
           <p>
-            Personagens centrais que conduzem os principais conflitos e arcos da
-            narrativa.
+            Linhagens, famílias e grupos hereditários associados a poderes,
+            tradições, territórios ou histórias específicas.
           </p>
         </article>
 
         <article class="card">
           <div class="card-icon">II</div>
-          <h3>Aliados</h3>
+          <h3>Organizações</h3>
           <p>
-            Figuras que influenciam a jornada dos protagonistas, oferecendo apoio,
-            rivalidade ou orientação.
+            Instituições, associações, corporações, ordens e grupos estruturados
+            que atuam no mundo da obra.
           </p>
         </article>
 
         <article class="card">
           <div class="card-icon">III</div>
-          <h3>Antagonistas</h3>
+          <h3>Facções</h3>
           <p>
-            Forças opostas, inimigos, entidades ou organizações que movimentam os
-            conflitos da obra.
+            Forças independentes ou rivais que disputam poder, influência,
+            território, conhecimento ou domínio espiritual.
           </p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="wiki">
+    <section class="section" id="deuses">
       <div class="section-header">
-        <div class="section-kicker">Enciclopédia</div>
-        <h2>Wiki Oficial</h2>
+        <div class="section-kicker">Entidades Superiores</div>
+        <h2>Deuses e Entidades</h2>
       </div>
 
       <p>
-        A wiki funcionará como uma enciclopédia completa do universo de Demolind
-        Ketyo, reunindo informações aprofundadas sobre personagens, poderes,
-        locais, espécies, eventos históricos, objetos, organizações e conceitos
-        centrais.
+        Esta seção será destinada aos registros sobre deuses, divindades, seres
+        superiores, entidades espirituais, existências primordiais e demais forças
+        que ocupam posições elevadas na cosmologia de <strong>Demolind Ketyo</strong>.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">☼</div>
+          <h3>Divindades</h3>
+          <p>
+            Seres associados a domínios superiores, leis fundamentais, conceitos
+            universais ou autoridades espirituais.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">☾</div>
+          <h3>Entidades</h3>
+          <p>
+            Existências anômalas, espirituais ou sobrenaturais que influenciam
+            eventos, indivíduos e regiões específicas.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">✧</div>
+          <h3>Seres Primordiais</h3>
+          <p>
+            Figuras ligadas à origem, manutenção, ruptura ou transformação das
+            estruturas fundamentais do universo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="poderes">
+      <div class="section-header">
+        <div class="section-kicker">Sistemas Sobrenaturais</div>
+        <h2>Poderes e Sistemas</h2>
+      </div>
+
+      <p>
+        Esta seção reunirá os sistemas de poder, energias, técnicas, classificações,
+        habilidades, evoluções, ascensões e demais manifestações sobrenaturais que
+        sustentam os conflitos e a mitologia da obra.
+      </p>
+
+      <div class="record-list">
+        <div class="record-item">
+          <strong>Sistemas de Poder</strong>
+          <span>Conjunto de regras, fontes de energia, métodos de evolução e estruturas que definem o uso de habilidades dentro da obra.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Técnicas</strong>
+          <span>Aplicações específicas dos poderes, podendo envolver combate, defesa, ocultação, manipulação, invocação ou transformação.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Ascensões</strong>
+          <span>Processos de evolução, elevação espiritual, fortalecimento ou transformação de um indivíduo dentro da hierarquia do universo.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mundos">
+      <div class="section-header">
+        <div class="section-kicker">Geografia da Obra</div>
+        <h2>Mundos e Regiões</h2>
+      </div>
+
+      <p>
+        Esta área será dedicada aos planetas, continentes, cidades, territórios,
+        dimensões, reinos, zonas especiais e demais locais relevantes para a
+        narrativa de <strong>Demolind Ketyo</strong>.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">◎</div>
+          <h3>Planetas</h3>
+          <p>
+            Corpos celestes e mundos habitados que formam os principais cenários
+            da obra.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">△</div>
+          <h3>Continentes</h3>
+          <p>
+            Grandes regiões geográficas, culturais e políticas que estruturam os
+            mundos da narrativa.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▣</div>
+          <h3>Cidades e Territórios</h3>
+          <p>
+            Locais específicos onde ocorrem eventos, conflitos, descobertas e
+            transformações importantes.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="cronologia">
+      <div class="section-header">
+        <div class="section-kicker">História</div>
+        <h2>Cronologia e Eras</h2>
+      </div>
+
+      <p>
+        A cronologia reunirá os principais marcos históricos do universo da obra,
+        incluindo eras, guerras, catástrofes, surgimentos de civilizações, ascensões
+        de entidades, quedas de reinos e acontecimentos que alteraram o curso da
+        história.
       </p>
 
       <div class="chapter-box">
         <div>
-          <h3>Link da Wiki</h3>
+          <h3>Registros históricos em construção</h3>
           <p>
-            Quando desejar, substituiremos este trecho pelo endereço oficial da
-            sua wiki no Fandom.
+            Futuramente, esta seção poderá apresentar linhas do tempo, calendários,
+            eras próprias e resumos de eventos importantes do universo.
           </p>
         </div>
 
-        <a class="button" href="#">Acessar Wiki</a>
+        <a class="button secondary" href="#enciclopedia">Voltar aos Arquivos</a>
       </div>
     </section>
 
@@ -682,7 +891,7 @@
 
   <footer class="footer">
     <p>
-      <strong>Demolind Ketyo</strong> — Site oficial da Light Novel/RPG.
+      <strong>Demolind Ketyo</strong> — Site oficial e enciclopédia da Light Novel/RPG.
       <br>
       © <span id="year"></span> Todos os direitos reservados.
     </p>
