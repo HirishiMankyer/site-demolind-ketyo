@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arcos — RPG N100 | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">RPG N100</div>
+        <h2>Arcos Narrativos</h2>
+      </div>
+
+      <p>
+        Esta página reúne os arcos narrativos do <strong>RPG N100</strong>,
+        organizando os capítulos por fases, conflitos, regiões, acontecimentos
+        centrais e mudanças importantes na narrativa.
+      </p>
+
+      <p>
+        Cada arco poderá conter sua própria descrição, intervalo de capítulos,
+        personagens centrais, eventos principais e relação com a cronologia geral
+        da obra.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">RPG N100</span>
+        <span class="tag">Arcos</span>
+        <span class="tag">Fases Narrativas</span>
+        <span class="tag">Organização</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Arco</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um arco narrativo.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do arco..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Arcos do RPG N100</h2>
+      </div>
+
+      <p>
+        Esta área será usada para registrar os arcos narrativos do RPG N100. Os
+        nomes abaixo são espaços reservados para futuros arcos oficiais.
+      </p>
+
+      <div class="record-list" id="chapterList">
+        <div class="record-item">
+          <strong>Arco não registrado</strong>
+          <span>Espaço reservado para um arco narrativo do RPG N100.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Arco não registrado</strong>
+          <span>Espaço reservado para um arco narrativo do RPG N100.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Arco não registrado</strong>
+          <span>Espaço reservado para um arco narrativo do RPG N100.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Fase narrativa não registrada</strong>
+          <span>Espaço reservado para uma fase narrativa do RPG N100.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Evento central não registrado</strong>
+          <span>Espaço reservado para um evento central associado a um arco.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Áreas do RPG N100</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="capitulos-n100.html">
+          <div class="card-icon">◈</div>
+          <h3>RPG N100</h3>
+          <p>Retorne à página principal dos capítulos do RPG N100.</p>
+        </a>
+
+        <a class="card" href="capitulos-n100-lista.html">
+          <div class="card-icon">I</div>
+          <h3>Lista</h3>
+          <p>Consulte a lista principal dos capítulos do RPG N100.</p>
+        </a>
+
+        <a class="card" href="capitulos-n100-resumos.html">
+          <div class="card-icon">IV</div>
+          <h3>Resumos</h3>
+          <p>Consulte os resumos de capítulos e arcos do RPG N100.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Arcos do RPG N100.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chapterList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
