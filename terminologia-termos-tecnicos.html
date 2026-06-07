@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Termos Técnicos | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Terminologia</div>
+        <h2>Termos Técnicos</h2>
+      </div>
+
+      <p>
+        Esta página reúne os termos técnicos utilizados em <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para palavras associadas a sistemas de poder,
+        técnicas, energias, classificações, fenômenos sobrenaturais e estruturas internas
+        da obra.
+      </p>
+
+      <p>
+        Os termos técnicos auxiliam na compreensão das regras, conceitos e mecanismos
+        que sustentam a cosmologia, os poderes, as espécies, as organizações e os
+        acontecimentos do universo.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Termos Técnicos</span>
+        <span class="tag">Poderes</span>
+        <span class="tag">Conceitos Internos</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Termo Técnico</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um termo técnico dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o termo técnico..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Termos Técnicos</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar os termos técnicos
+        registrados na enciclopédia. Futuramente, cada termo poderá ser ligado à
+        sua própria página individual.
+      </p>
+
+      <div class="record-list" id="termList">
+        <div class="record-item">
+          <strong>Kaidou</strong>
+          <span>Termo técnico registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Kaidousha</strong>
+          <span>Termo técnico registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Reikino Ryodo</strong>
+          <span>Termo técnico registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Witsi</strong>
+          <span>Termo técnico registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Genshi</strong>
+          <span>Termo técnico registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Terminologia</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="terminologia.html">
+          <div class="card-icon">◈</div>
+          <h3>Terminologia</h3>
+          <p>Retorne à página principal da terminologia.</p>
+        </a>
+
+        <a class="card" href="terminologia-conceitos.html">
+          <div class="card-icon">II</div>
+          <h3>Conceitos</h3>
+          <p>Consulte conceitos fundamentais da obra.</p>
+        </a>
+
+        <a class="card" href="terminologia-titulos-cargos.html">
+          <div class="card-icon">III</div>
+          <h3>Títulos e Cargos</h3>
+          <p>Consulte títulos, cargos e posições hierárquicas.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Termos Técnicos.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#termList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
