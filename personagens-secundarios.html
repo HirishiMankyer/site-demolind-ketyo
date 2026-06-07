@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Secundários | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Personagens</div>
+        <h2>Secundários</h2>
+      </div>
+
+      <p>
+        Esta página reúne os personagens secundários de <strong>Demolind Ketyo</strong>,
+        servindo como índice de consulta para figuras que participam da narrativa,
+        ampliam o universo da obra e influenciam eventos, regiões, organizações,
+        conflitos ou núcleos específicos da história.
+      </p>
+
+      <p>
+        Os personagens secundários podem ter funções variadas, atuando como aliados,
+        rivais, mentores, membros de facções, habitantes de regiões importantes ou
+        figuras ligadas a acontecimentos específicos da obra.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Personagens</span>
+        <span class="tag">Secundários</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Personagem Secundário</h2>
+      </div>
+
+      <p>
+        Use o campo abaixo para procurar rapidamente um nome dentro desta lista.
+      </p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do personagem secundário..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Personagens Secundários</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar os personagens
+        secundários registrados na enciclopédia. Futuramente, cada nome poderá ser
+        ligado à sua própria página individual.
+      </p>
+
+      <div class="record-list" id="characterList">
+        <div class="record-item">
+          <strong>Leoneger</strong>
+          <span>Personagem secundário registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Personagem secundário não registrado</strong>
+          <span>Espaço reservado para um personagem secundário que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Personagem secundário não registrado</strong>
+          <span>Espaço reservado para um personagem secundário que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Personagem secundário não registrado</strong>
+          <span>Espaço reservado para um personagem secundário que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Personagem secundário não registrado</strong>
+          <span>Espaço reservado para um personagem secundário que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Personagens</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="personagens.html">
+          <div class="card-icon">◈</div>
+          <h3>Personagens</h3>
+          <p>
+            Retorne à página principal da categoria de personagens.
+          </p>
+        </a>
+
+        <a class="card" href="personagens-protagonistas.html">
+          <div class="card-icon">I</div>
+          <h3>Protagonistas</h3>
+          <p>
+            Consulte a lista de protagonistas registrados na obra.
+          </p>
+        </a>
+
+        <a class="card" href="personagens-entidades.html">
+          <div class="card-icon">III</div>
+          <h3>Entidades</h3>
+          <p>
+            Consulte a lista de entidades tratadas como personagens da narrativa.
+          </p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Personagens Secundários.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#characterList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
