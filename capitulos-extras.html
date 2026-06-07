@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Extras | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Capítulos</div>
+        <h2>Extras</h2>
+      </div>
+
+      <p>
+        Esta página reúne os conteúdos extras de <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para materiais complementares, textos
+        adicionais, registros especiais, cenas extras, documentos de apoio e
+        conteúdos que ampliam a compreensão do universo da obra.
+      </p>
+
+      <p>
+        Os Extras não seguem necessariamente a estrutura principal dos RPGs, sendo
+        organizados apenas em uma lista própria para facilitar o acesso aos materiais
+        complementares.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Extras</span>
+        <span class="tag">Materiais Complementares</span>
+        <span class="tag">Textos Especiais</span>
+        <span class="tag">Lista</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Extra</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um conteúdo extra dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do extra..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Extras</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar os conteúdos extras
+        registrados no site. Futuramente, cada extra poderá ser ligado à sua própria
+        página individual ou arquivo de leitura.
+      </p>
+
+      <div class="record-list" id="chapterList">
+        <div class="record-item">
+          <strong>Extra não registrado</strong>
+          <span>Espaço reservado para um conteúdo extra que será adicionado posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Material complementar não registrado</strong>
+          <span>Espaço reservado para um material complementar que será adicionado posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Texto especial não registrado</strong>
+          <span>Espaço reservado para um texto especial que será adicionado posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Registro adicional não registrado</strong>
+          <span>Espaço reservado para um registro adicional que será adicionado posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Cena extra não registrada</strong>
+          <span>Espaço reservado para uma cena extra que será adicionada posteriormente.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Áreas de Capítulos</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="capitulos.html">
+          <div class="card-icon">◈</div>
+          <h3>Capítulos</h3>
+          <p>Retorne à página principal de capítulos.</p>
+        </a>
+
+        <a class="card" href="capitulos-dk.html">
+          <div class="card-icon">I</div>
+          <h3>RPG D.K.</h3>
+          <p>Acesse a área de capítulos, arcos, ordem de leitura e resumos do RPG D.K.</p>
+        </a>
+
+        <a class="card" href="capitulos-gaidens.html">
+          <div class="card-icon">V</div>
+          <h3>Gaidens</h3>
+          <p>Consulte histórias paralelas, episódios derivados e narrativas independentes.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Extras da obra.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chapterList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
