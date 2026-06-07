@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ascensões | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Poderes e Técnicas</div>
+        <h2>Ascensões</h2>
+      </div>
+
+      <p>
+        Esta página reúne os processos de ascensão presentes em
+        <strong>Demolind Ketyo</strong>, funcionando como índice de consulta para
+        evoluções, elevações espirituais, transformações, mudanças de estado,
+        fortalecimento e progressões associadas aos sistemas de poder da obra.
+      </p>
+
+      <p>
+        As ascensões podem envolver indivíduos, entidades, divindades, espécies,
+        usuários de poder, linhagens, rituais, bênçãos, alterações espirituais ou
+        mudanças dentro de uma hierarquia sobrenatural.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Ascensões</span>
+        <span class="tag">Evoluções</span>
+        <span class="tag">Transformações</span>
+        <span class="tag">Elevação Espiritual</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Ascensão</h2>
+      </div>
+
+      <p>
+        Use o campo abaixo para procurar rapidamente uma ascensão dentro desta lista.
+      </p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome da ascensão..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Ascensões</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar as ascensões registradas
+        na enciclopédia. Futuramente, cada nome poderá ser ligado à sua própria
+        página individual.
+      </p>
+
+      <div class="record-list" id="powerList">
+        <div class="record-item">
+          <strong>Shukufuku</strong>
+          <span>Ascensão, bênção ou processo registrado na enciclopédia. Perfil individual ainda em construção.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Ascensão não registrada</strong>
+          <span>Espaço reservado para uma ascensão que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Evolução não registrada</strong>
+          <span>Espaço reservado para uma evolução que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Transformação não registrada</strong>
+          <span>Espaço reservado para uma transformação que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Elevação não registrada</strong>
+          <span>Espaço reservado para uma elevação espiritual que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Poderes</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="poderes-tecnicas.html">
+          <div class="card-icon">◈</div>
+          <h3>Poderes e Técnicas</h3>
+          <p>
+            Retorne à página principal da categoria de poderes.
+          </p>
+        </a>
+
+        <a class="card" href="poderes-sistemas.html">
+          <div class="card-icon">I</div>
+          <h3>Sistemas de Poder</h3>
+          <p>
+            Consulte a lista de sistemas de poder registrados na obra.
+          </p>
+        </a>
+
+        <a class="card" href="poderes-classificacoes.html">
+          <div class="card-icon">V</div>
+          <h3>Classificações</h3>
+          <p>
+            Consulte a lista de classificações associadas aos poderes da obra.
+          </p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Ascensões.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#powerList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
