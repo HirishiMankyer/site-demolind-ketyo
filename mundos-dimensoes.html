@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dimensões | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Mundos e Regiões</div>
+        <h2>Dimensões</h2>
+      </div>
+
+      <p>
+        Esta página reúne as dimensões presentes em <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para planos existenciais, espaços paralelos,
+        regiões anômalas, domínios espirituais e lugares separados das leis comuns
+        do mundo físico.
+      </p>
+
+      <p>
+        Dimensões podem possuir regras próprias, habitantes específicos, entidades
+        dominantes, fenômenos instáveis, entradas restritas ou influência direta
+        sobre sistemas de poder e eventos históricos.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Dimensões</span>
+        <span class="tag">Planos Existenciais</span>
+        <span class="tag">Domínios</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Dimensão</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente uma dimensão dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome da dimensão..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Dimensões</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar as dimensões registradas
+        na enciclopédia. Futuramente, cada nome poderá ser ligado à sua própria página individual.
+      </p>
+
+      <div class="record-list" id="worldList">
+        <div class="record-item">
+          <strong>Dimensão não registrada</strong>
+          <span>Espaço reservado para uma dimensão que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Dimensão não registrada</strong>
+          <span>Espaço reservado para uma dimensão que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Plano não registrado</strong>
+          <span>Espaço reservado para um plano existencial que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Domínio não registrado</strong>
+          <span>Espaço reservado para um domínio dimensional que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Região anômala não registrada</strong>
+          <span>Espaço reservado para uma região anômala que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Mundos</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="mundos-regioes.html">
+          <div class="card-icon">◈</div>
+          <h3>Mundos e Regiões</h3>
+          <p>Retorne à página principal da categoria de mundos.</p>
+        </a>
+
+        <a class="card" href="mundos-galaxias.html">
+          <div class="card-icon">I</div>
+          <h3>Galáxias</h3>
+          <p>Consulte a lista de galáxias registradas na enciclopédia.</p>
+        </a>
+
+        <a class="card" href="mundos-planetas.html">
+          <div class="card-icon">III</div>
+          <h3>Planetas</h3>
+          <p>Consulte a lista de planetas registrados na obra.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Dimensões.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#worldList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
