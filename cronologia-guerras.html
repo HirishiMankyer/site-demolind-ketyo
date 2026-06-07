@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Guerras | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Cronologia</div>
+        <h2>Guerras</h2>
+      </div>
+
+      <p>
+        Esta página reúne as guerras de <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para conflitos de grande escala entre
+        civilizações, clãs, organizações, divindades, entidades, mundos, dimensões
+        ou forças sobrenaturais.
+      </p>
+
+      <p>
+        Guerras podem provocar mudanças políticas, quedas de povos, destruição de
+        regiões, surgimento de heróis, ascensão de entidades, criação de alianças
+        e alterações profundas na história do universo.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Guerras</span>
+        <span class="tag">Conflitos</span>
+        <span class="tag">Batalhas Históricas</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Guerra</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente uma guerra dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome da guerra..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Guerras</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar as guerras registradas
+        na enciclopédia. Futuramente, cada guerra poderá ser ligada à sua própria
+        página individual.
+      </p>
+
+      <div class="record-list" id="chronologyList">
+        <div class="record-item">
+          <strong>Guerra não registrada</strong>
+          <span>Espaço reservado para uma guerra que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Conflito não registrado</strong>
+          <span>Espaço reservado para um conflito que será adicionado posteriormente à cronologia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Batalha não registrada</strong>
+          <span>Espaço reservado para uma batalha histórica que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Invasão não registrada</strong>
+          <span>Espaço reservado para uma invasão importante que será adicionada posteriormente à cronologia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Campanha não registrada</strong>
+          <span>Espaço reservado para uma campanha militar ou espiritual que será adicionada posteriormente.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas da Cronologia</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="cronologia.html">
+          <div class="card-icon">◈</div>
+          <h3>Cronologia</h3>
+          <p>Retorne à página principal da cronologia.</p>
+        </a>
+
+        <a class="card" href="cronologia-eventos-historicos.html">
+          <div class="card-icon">II</div>
+          <h3>Eventos Históricos</h3>
+          <p>Consulte acontecimentos importantes registrados na história da obra.</p>
+        </a>
+
+        <a class="card" href="cronologia-catastrofes.html">
+          <div class="card-icon">IV</div>
+          <h3>Catástrofes</h3>
+          <p>Consulte desastres e rupturas registrados na cronologia.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Guerras.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chronologyList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
