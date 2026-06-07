@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calendários | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Cronologia</div>
+        <h2>Calendários</h2>
+      </div>
+
+      <p>
+        Esta página reúne os calendários de <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para sistemas de contagem temporal,
+        datas, eras, períodos, ciclos históricos e formas utilizadas por povos,
+        civilizações ou organizações para registrar a passagem do tempo.
+      </p>
+
+      <p>
+        Calendários podem ser baseados em eras universais, eventos divinos,
+        ciclos planetários, fenômenos cósmicos, marcos históricos, fundações de
+        civilizações ou acontecimentos sobrenaturais de grande importância.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Calendários</span>
+        <span class="tag">Datas</span>
+        <span class="tag">Ciclos</span>
+        <span class="tag">Contagem Temporal</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Calendário</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um calendário dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do calendário..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Calendários</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar calendários, ciclos
+        e sistemas de contagem temporal registrados na enciclopédia. Futuramente,
+        cada calendário poderá ser ligado à sua própria página individual.
+      </p>
+
+      <div class="record-list" id="chronologyList">
+        <div class="record-item">
+          <strong>Calendário das Eras</strong>
+          <span>Registro reservado para a contagem temporal baseada nas grandes eras históricas do universo.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Calendário não registrado</strong>
+          <span>Espaço reservado para um calendário que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Ciclo não registrado</strong>
+          <span>Espaço reservado para um ciclo temporal que será adicionado posteriormente à cronologia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Datação não registrada</strong>
+          <span>Espaço reservado para um sistema de datação ou marcação temporal que será adicionado posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Período não registrado</strong>
+          <span>Espaço reservado para um período histórico ou divisão temporal que será adicionado posteriormente.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas da Cronologia</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="cronologia.html">
+          <div class="card-icon">◈</div>
+          <h3>Cronologia</h3>
+          <p>Retorne à página principal da cronologia.</p>
+        </a>
+
+        <a class="card" href="cronologia-eras.html">
+          <div class="card-icon">I</div>
+          <h3>Eras</h3>
+          <p>Consulte os grandes períodos históricos da obra.</p>
+        </a>
+
+        <a class="card" href="cronologia-catastrofes.html">
+          <div class="card-icon">IV</div>
+          <h3>Catástrofes</h3>
+          <p>Consulte desastres e rupturas registrados na cronologia.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Calendários.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chronologyList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
