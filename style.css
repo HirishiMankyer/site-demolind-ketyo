@@ -934,3 +934,111 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   AJUSTES DO TOPO DO VERBETE — CONTEÚDO E ABAS
+   ========================================================= */
+
+.article-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 26px;
+  align-items: start;
+}
+
+.article-hero-main {
+  min-width: 0;
+}
+
+.article-toc-top {
+  border: 1px solid rgba(216, 183, 101, 0.25);
+  border-radius: 18px;
+  background: rgba(10, 11, 22, 0.72);
+  overflow: hidden;
+}
+
+.article-toc-top .article-toc-title {
+  padding: 12px 16px;
+  color: #f0d36f;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(216, 183, 101, 0.18);
+  background: rgba(216, 183, 101, 0.055);
+}
+
+.article-toc-top a {
+  display: block;
+  padding: 10px 16px;
+  color: #d8c9aa;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(216, 183, 101, 0.1);
+  font-size: 0.94rem;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.article-toc-top a:last-child {
+  border-bottom: none;
+}
+
+.article-toc-top a:hover {
+  color: #f0d36f;
+  background: rgba(216, 183, 101, 0.07);
+  padding-left: 22px;
+}
+
+.article-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 24px;
+  border: 1px solid rgba(216, 183, 101, 0.28);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(10, 11, 22, 0.78);
+}
+
+.article-tabs a {
+  flex: 1 1 auto;
+  min-width: 120px;
+  padding: 11px 14px;
+  color: #d8c9aa;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-right: 1px solid rgba(216, 183, 101, 0.18);
+  background: rgba(255, 255, 255, 0.025);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.article-tabs a:last-child {
+  border-right: none;
+}
+
+.article-tabs a:hover {
+  color: #0b0c14;
+  background: linear-gradient(90deg, #d8b765, #f0d36f);
+}
+
+.article-section {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 900px) {
+  .article-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-toc-top {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-tabs a {
+    flex-basis: 50%;
+    border-bottom: 1px solid rgba(216, 183, 101, 0.14);
+  }
+}
