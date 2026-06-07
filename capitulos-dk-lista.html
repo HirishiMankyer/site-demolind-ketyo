@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lista de Capítulos — RPG D.K. | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">RPG D.K.</div>
+        <h2>Lista de Capítulos</h2>
+      </div>
+
+      <p>
+        Esta página reúne a lista principal de capítulos do <strong>RPG D.K.</strong>,
+        servindo como índice de consulta para a sequência oficial da narrativa.
+      </p>
+
+      <p>
+        Futuramente, cada capítulo poderá possuir uma página própria ou um link
+        direto para leitura, resumo, arco correspondente e demais informações
+        relacionadas.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">RPG D.K.</span>
+        <span class="tag">Lista</span>
+        <span class="tag">Capítulos</span>
+        <span class="tag">Leitura Oficial</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Capítulo</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um capítulo dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o número ou nome do capítulo..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Capítulos do RPG D.K.</h2>
+      </div>
+
+      <p>
+        Esta área servirá como índice principal dos capítulos registrados. Os nomes
+        abaixo são espaços iniciais e poderão ser substituídos pelos títulos reais
+        dos capítulos.
+      </p>
+
+      <div class="record-list" id="chapterList">
+        <div class="record-item">
+          <strong>Capítulo 01</strong>
+          <span>Registro reservado para o primeiro capítulo do RPG D.K.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Capítulo 02</strong>
+          <span>Registro reservado para o segundo capítulo do RPG D.K.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Capítulo 03</strong>
+          <span>Registro reservado para o terceiro capítulo do RPG D.K.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Capítulo 04</strong>
+          <span>Registro reservado para o quarto capítulo do RPG D.K.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Capítulo 05</strong>
+          <span>Registro reservado para o quinto capítulo do RPG D.K.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Áreas do RPG D.K.</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="capitulos-dk.html">
+          <div class="card-icon">◈</div>
+          <h3>RPG D.K.</h3>
+          <p>Retorne à página principal dos capítulos do RPG D.K.</p>
+        </a>
+
+        <a class="card" href="capitulos-dk-arcos.html">
+          <div class="card-icon">II</div>
+          <h3>Arcos</h3>
+          <p>Consulte a organização dos capítulos por arcos narrativos.</p>
+        </a>
+
+        <a class="card" href="capitulos-dk-ordem-leitura.html">
+          <div class="card-icon">III</div>
+          <h3>Ordem de Leitura</h3>
+          <p>Consulte a sequência recomendada de leitura do RPG D.K.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Capítulos do RPG D.K.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chapterList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
