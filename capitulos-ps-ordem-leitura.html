@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ordem de Leitura — RPG P.S. | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">RPG P.S.</div>
+        <h2>Ordem de Leitura</h2>
+      </div>
+
+      <p>
+        Esta página reúne a ordem de leitura recomendada do <strong>RPG P.S.</strong>,
+        indicando a sequência ideal para acompanhar capítulos principais,
+        especiais, interlúdios, extras relacionados e possíveis materiais
+        complementares.
+      </p>
+
+      <p>
+        A ordem de leitura poderá ser ajustada conforme a obra for expandida,
+        permitindo separar a publicação original da sequência recomendada para
+        novos leitores.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">RPG P.S.</span>
+        <span class="tag">Ordem de Leitura</span>
+        <span class="tag">Sequência Recomendada</span>
+        <span class="tag">Leitura Oficial</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Registro de Leitura</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um item da ordem de leitura.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite capítulo, arco ou registro..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Sequência</div>
+        <h2>Ordem Recomendada do RPG P.S.</h2>
+      </div>
+
+      <p>
+        Esta área será usada para organizar a sequência recomendada de leitura.
+        Os registros abaixo são espaços reservados.
+      </p>
+
+      <div class="record-list" id="chapterList">
+        <div class="record-item">
+          <strong>1. Capítulo 01</strong>
+          <span>Primeiro registro reservado da ordem de leitura do RPG P.S.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>2. Capítulo 02</strong>
+          <span>Segundo registro reservado da ordem de leitura do RPG P.S.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>3. Capítulo 03</strong>
+          <span>Terceiro registro reservado da ordem de leitura do RPG P.S.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>4. Registro não definido</strong>
+          <span>Espaço reservado para capítulo, interlúdio ou material complementar.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>5. Registro não definido</strong>
+          <span>Espaço reservado para capítulo, interlúdio ou material complementar.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Áreas do RPG P.S.</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="capitulos-ps.html">
+          <div class="card-icon">◈</div>
+          <h3>RPG P.S.</h3>
+          <p>Retorne à página principal dos capítulos do RPG P.S.</p>
+        </a>
+
+        <a class="card" href="capitulos-ps-lista.html">
+          <div class="card-icon">I</div>
+          <h3>Lista</h3>
+          <p>Consulte a lista principal dos capítulos do RPG P.S.</p>
+        </a>
+
+        <a class="card" href="capitulos-ps-arcos.html">
+          <div class="card-icon">II</div>
+          <h3>Arcos</h3>
+          <p>Consulte a organização dos capítulos por arcos narrativos.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Ordem de Leitura do RPG P.S.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chapterList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
