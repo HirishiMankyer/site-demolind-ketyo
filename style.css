@@ -854,3 +854,83 @@ h2 {
     padding-top: 4px;
   }
 }
+
+/* =========================================================
+   AJUSTES DO MODELO DE PERSONAGEM — INFOBOX E CONTEÚDO
+   ========================================================= */
+
+.article-sidebar {
+  position: static;
+  top: auto;
+}
+
+.infobox-section-header {
+  padding: 12px 16px;
+  color: #0b0c14;
+  background: linear-gradient(90deg, #d8b765, #f0d36f);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 246, 223, 0.35);
+  border-bottom: 1px solid rgba(216, 183, 101, 0.35);
+}
+
+.infobox-list {
+  margin: 0;
+  padding: 12px 16px 14px 34px;
+  color: #e4dac4;
+  line-height: 1.7;
+  border-bottom: 1px solid rgba(216, 183, 101, 0.14);
+}
+
+.infobox-list li {
+  margin-bottom: 6px;
+}
+
+.infobox-list li:last-child {
+  margin-bottom: 0;
+}
+
+.article-subpage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.article-subpage-card {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid rgba(216, 183, 101, 0.22);
+  border-radius: 16px;
+  color: #e4dac4;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.035);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.article-subpage-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(216, 183, 101, 0.55);
+  background: rgba(216, 183, 101, 0.07);
+}
+
+.article-subpage-card strong {
+  display: block;
+  color: #f0d36f;
+  margin-bottom: 6px;
+}
+
+.article-subpage-card span {
+  display: block;
+  color: #cfc2a7;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .article-subpage-grid {
+    grid-template-columns: 1fr;
+  }
+}
