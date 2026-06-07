@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eras | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Cronologia</div>
+        <h2>Eras</h2>
+      </div>
+
+      <p>
+        Esta página reúne as eras históricas de <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para grandes períodos que marcaram a
+        origem, transformação, expansão, queda ou reorganização do universo.
+      </p>
+
+      <p>
+        As eras representam divisões temporais de grande escala, geralmente associadas
+        a mudanças universais, nascimento de civilizações, surgimento de entidades,
+        guerras antigas, catástrofes ou acontecimentos que redefiniram a história.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Eras</span>
+        <span class="tag">História Universal</span>
+        <span class="tag">Períodos Históricos</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Era</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente uma era dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome da era..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Eras</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar as eras registradas
+        na enciclopédia. Futuramente, cada era poderá ser ligada à sua própria
+        página individual.
+      </p>
+
+      <div class="record-list" id="chronologyList">
+        <div class="record-item">
+          <strong>Era Genesis</strong>
+          <span>Era associada à origem da vida, ao surgimento dos primeiros mundos e aos marcos iniciais do universo.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Era Divina</strong>
+          <span>Era relacionada ao nascimento das primeiras divindades, seres celestiais e autoridades superiores.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Era Evolutiva</strong>
+          <span>Era associada à expansão, evolução e transformação das civilizações e formas de existência.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Era não registrada</strong>
+          <span>Espaço reservado para uma era que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Era não registrada</strong>
+          <span>Espaço reservado para uma era que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas da Cronologia</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="cronologia.html">
+          <div class="card-icon">◈</div>
+          <h3>Cronologia</h3>
+          <p>Retorne à página principal da cronologia.</p>
+        </a>
+
+        <a class="card" href="cronologia-eventos-historicos.html">
+          <div class="card-icon">II</div>
+          <h3>Eventos Históricos</h3>
+          <p>Consulte acontecimentos importantes registrados na história da obra.</p>
+        </a>
+
+        <a class="card" href="cronologia-guerras.html">
+          <div class="card-icon">III</div>
+          <h3>Guerras</h3>
+          <p>Consulte conflitos de grande escala registrados na cronologia.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Eras.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#chronologyList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
