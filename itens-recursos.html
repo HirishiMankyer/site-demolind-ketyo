@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recursos | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Itens</div>
+        <h2>Recursos</h2>
+      </div>
+
+      <p>
+        Esta página reúne os recursos presentes em <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para materiais raros, substâncias,
+        minerais, fontes de energia, elementos naturais, recursos espirituais e
+        componentes sobrenaturais relevantes para o universo da obra.
+      </p>
+
+      <p>
+        Recursos podem ser utilizados em rituais, tecnologias, armas, artefatos,
+        técnicas, sistemas de poder, medicina, construção, alquimia, fabricação ou
+        processos associados à evolução de personagens e civilizações.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Recursos</span>
+        <span class="tag">Materiais Raros</span>
+        <span class="tag">Substâncias</span>
+        <span class="tag">Fontes de Energia</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Recurso</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um recurso dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do recurso..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Recursos</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar os recursos registrados
+        na enciclopédia. Futuramente, cada nome poderá ser ligado à sua própria página individual.
+      </p>
+
+      <div class="record-list" id="itemList">
+        <div class="record-item">
+          <strong>Recurso não registrado</strong>
+          <span>Espaço reservado para um recurso que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Material raro não registrado</strong>
+          <span>Espaço reservado para um material raro que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Substância não registrada</strong>
+          <span>Espaço reservado para uma substância que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Mineral não registrado</strong>
+          <span>Espaço reservado para um mineral que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Fonte de energia não registrada</strong>
+          <span>Espaço reservado para uma fonte de energia que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Itens</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="itens.html">
+          <div class="card-icon">◈</div>
+          <h3>Itens</h3>
+          <p>Retorne à página principal da categoria de itens.</p>
+        </a>
+
+        <a class="card" href="itens-armas.html">
+          <div class="card-icon">I</div>
+          <h3>Armas</h3>
+          <p>Consulte a lista de armas registradas na enciclopédia.</p>
+        </a>
+
+        <a class="card" href="itens-equipamentos.html">
+          <div class="card-icon">IV</div>
+          <h3>Equipamentos</h3>
+          <p>Consulte a lista de equipamentos registrados na obra.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Recursos.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#itemList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
