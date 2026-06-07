@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Domínios Divinos | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Deuses e Entidades</div>
+        <h2>Domínios Divinos</h2>
+      </div>
+
+      <p>
+        Esta página reúne os domínios divinos de <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para conceitos, forças, territórios,
+        leis, autoridades ou aspectos da existência sobre os quais uma divindade
+        ou entidade exerce influência.
+      </p>
+
+      <p>
+        Domínios divinos podem definir a autoridade de uma divindade, sua esfera
+        de atuação, seu vínculo com sistemas de poder, sua relação com mundos,
+        povos, fenômenos e acontecimentos fundamentais da cosmologia.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Domínios Divinos</span>
+        <span class="tag">Autoridades</span>
+        <span class="tag">Conceitos Superiores</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Domínio Divino</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um domínio divino dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do domínio divino..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Domínios Divinos</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar os domínios divinos
+        registrados na enciclopédia. Futuramente, cada domínio poderá ser ligado à
+        sua própria página individual.
+      </p>
+
+      <div class="record-list" id="deityList">
+        <div class="record-item">
+          <strong>Domínio não registrado</strong>
+          <span>Espaço reservado para um domínio divino que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Conceito superior não registrado</strong>
+          <span>Espaço reservado para um conceito superior que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Autoridade divina não registrada</strong>
+          <span>Espaço reservado para uma autoridade divina que será adicionada posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Lei divina não registrada</strong>
+          <span>Espaço reservado para uma lei divina que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Esfera de influência não registrada</strong>
+          <span>Espaço reservado para uma esfera de influência superior que será adicionada posteriormente.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Deuses e Entidades</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="deuses-entidades.html">
+          <div class="card-icon">◈</div>
+          <h3>Deuses e Entidades</h3>
+          <p>Retorne à página principal da categoria.</p>
+        </a>
+
+        <a class="card" href="deuses-divindades.html">
+          <div class="card-icon">I</div>
+          <h3>Divindades</h3>
+          <p>Consulte divindades, deuses e autoridades superiores.</p>
+        </a>
+
+        <a class="card" href="deuses-avatares-emissarios.html">
+          <div class="card-icon">IV</div>
+          <h3>Avatares e Emissários</h3>
+          <p>Consulte manifestações e representantes de entidades superiores.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Domínios Divinos.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#deityList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
