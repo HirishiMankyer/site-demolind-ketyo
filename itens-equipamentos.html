@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Equipamentos | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Itens</div>
+        <h2>Equipamentos</h2>
+      </div>
+
+      <p>
+        Esta página reúne os equipamentos presentes em <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para vestimentas, acessórios, armaduras,
+        ferramentas, dispositivos, instrumentos utilitários e demais objetos usados
+        por personagens, clãs, organizações ou civilizações.
+      </p>
+
+      <p>
+        Equipamentos podem possuir função prática, militar, tecnológica, espiritual,
+        ritualística ou simbólica, variando conforme sua origem, usuário, raridade
+        e importância dentro da narrativa.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Equipamentos</span>
+        <span class="tag">Acessórios</span>
+        <span class="tag">Ferramentas</span>
+        <span class="tag">Dispositivos</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Equipamento</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente um equipamento dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome do equipamento..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Equipamentos</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar os equipamentos
+        registrados na enciclopédia. Futuramente, cada nome poderá ser ligado à
+        sua própria página individual.
+      </p>
+
+      <div class="record-list" id="itemList">
+        <div class="record-item">
+          <strong>Equipamento não registrado</strong>
+          <span>Espaço reservado para um equipamento que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Acessório não registrado</strong>
+          <span>Espaço reservado para um acessório que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Ferramenta não registrada</strong>
+          <span>Espaço reservado para uma ferramenta que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Dispositivo não registrado</strong>
+          <span>Espaço reservado para um dispositivo que será adicionado posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Armadura não registrada</strong>
+          <span>Espaço reservado para uma armadura ou proteção que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Itens</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="itens.html">
+          <div class="card-icon">◈</div>
+          <h3>Itens</h3>
+          <p>Retorne à página principal da categoria de itens.</p>
+        </a>
+
+        <a class="card" href="itens-reliquias.html">
+          <div class="card-icon">III</div>
+          <h3>Relíquias</h3>
+          <p>Consulte a lista de relíquias registradas na obra.</p>
+        </a>
+
+        <a class="card" href="itens-recursos.html">
+          <div class="card-icon">V</div>
+          <h3>Recursos</h3>
+          <p>Consulte a lista de recursos e materiais raros registrados na obra.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Equipamentos.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#itemList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
