@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Facções | Demolind Ketyo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="brand-symbol">◈</div>
+        <div class="brand-text">
+          <strong>Demolind Ketyo</strong>
+          <span>Enciclopédia Oficial</span>
+        </div>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="index.html#enciclopedia">Enciclopédia</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="poderes-tecnicas.html">Poderes</a>
+        <a href="itens.html">Itens</a>
+        <a href="mundos-regioes.html">Mundos</a>
+        <a href="terminologia.html">Terminologia</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Clãs e Organizações</div>
+        <h2>Facções</h2>
+      </div>
+
+      <p>
+        Esta página reúne as facções presentes em <strong>Demolind Ketyo</strong>,
+        funcionando como índice de consulta para grupos independentes, rivais,
+        insurgentes, alianças temporárias, forças dissidentes ou coletivos que
+        disputam poder, influência, território, conhecimento ou domínio espiritual.
+      </p>
+
+      <p>
+        Facções podem surgir dentro de organizações maiores, se opor a instituições
+        estabelecidas, atuar em segredo, controlar regiões específicas ou influenciar
+        guerras, conflitos políticos e acontecimentos sobrenaturais.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Facções</span>
+        <span class="tag">Grupos Rivais</span>
+        <span class="tag">Alianças</span>
+        <span class="tag">Índice de Consulta</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pesquisa</div>
+        <h2>Buscar Facção</h2>
+      </div>
+
+      <p>Use o campo abaixo para procurar rapidamente uma facção dentro desta lista.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Digite o nome da facção..."
+        style="width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(216,183,101,0.35); background:rgba(255,255,255,0.045); color:#f4efe3; font-size:16px; outline:none;"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lista</div>
+        <h2>Lista de Facções</h2>
+      </div>
+
+      <p>
+        Esta lista servirá como área principal para organizar as facções registradas
+        na enciclopédia. Futuramente, cada facção poderá ser ligada à sua própria
+        página individual.
+      </p>
+
+      <div class="record-list" id="orgList">
+        <div class="record-item">
+          <strong>Facção não registrada</strong>
+          <span>Espaço reservado para uma facção que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Aliança não registrada</strong>
+          <span>Espaço reservado para uma aliança que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Grupo dissidente não registrado</strong>
+          <span>Espaço reservado para um grupo dissidente que será adicionado posteriormente.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Força rival não registrada</strong>
+          <span>Espaço reservado para uma força rival que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+
+        <div class="record-item">
+          <strong>Coalizão não registrada</strong>
+          <span>Espaço reservado para uma coalizão que será adicionada posteriormente à enciclopédia.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Navegação</div>
+        <h2>Outras Listas de Clãs e Organizações</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="clas-organizacoes.html">
+          <div class="card-icon">◈</div>
+          <h3>Clãs e Organizações</h3>
+          <p>Retorne à página principal da categoria.</p>
+        </a>
+
+        <a class="card" href="clas-clas.html">
+          <div class="card-icon">I</div>
+          <h3>Clãs</h3>
+          <p>Consulte clãs registrados na obra.</p>
+        </a>
+
+        <a class="card" href="clas-organizacoes-lista.html">
+          <div class="card-icon">IV</div>
+          <h3>Organizações</h3>
+          <p>Consulte organizações e instituições registradas na obra.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>Demolind Ketyo</strong> — Lista de Facções.
+      <br>
+      © <span id="year"></span> Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById("searchInput");
+    const records = document.querySelectorAll("#orgList .record-item");
+
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      records.forEach(function (record) {
+        const text = record.textContent.toLowerCase();
+        record.style.display = text.includes(searchTerm) ? "grid" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
