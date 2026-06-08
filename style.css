@@ -1182,3 +1182,156 @@ h2 {
     width: 120px;
   }
 }
+
+/* =========================================================
+   CABEÇALHOS DO MODELO DE PERSONAGEM — VARIAÇÕES AZUIS
+   ========================================================= */
+
+/* Cores diferentes para cada tópico principal do personagem */
+.article-section#introducao {
+  --h2-blue-1: #082f59;
+  --h2-blue-2: #0b4f8f;
+  --h2-blue-3: #083866;
+}
+
+.article-section#aparencia {
+  --h2-blue-1: #0a3f6f;
+  --h2-blue-2: #146aa8;
+  --h2-blue-3: #0b497c;
+}
+
+.article-section#personalidade {
+  --h2-blue-1: #102f6b;
+  --h2-blue-2: #1a5aa6;
+  --h2-blue-3: #123f7c;
+}
+
+.article-section#etimologia {
+  --h2-blue-1: #063d58;
+  --h2-blue-2: #0f7898;
+  --h2-blue-3: #07536f;
+}
+
+.article-section#curiosidades {
+  --h2-blue-1: #142c76;
+  --h2-blue-2: #255bb3;
+  --h2-blue-3: #183d8a;
+}
+
+.article-section#navegacao {
+  --h2-blue-1: #0c365f;
+  --h2-blue-2: #1b6296;
+  --h2-blue-3: #0d456e;
+}
+
+/* H2 principal — estilo grande, centralizado e azul, com variações */
+.article-section h2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 0 34px;
+  padding: 12px 22px;
+
+  color: #fff8e8;
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--h2-blue-1, #082f59) 12%,
+      var(--h2-blue-2, #0b4f8f) 50%,
+      var(--h2-blue-3, #083866) 88%,
+      transparent 100%
+    );
+
+  border-top: 1px solid rgba(176, 215, 255, 0.45);
+  border-bottom: 1px solid rgba(176, 215, 255, 0.45);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.38);
+}
+
+.article-section h2::before,
+.article-section h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  margin: 0 18px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(176, 215, 255, 0.8),
+    transparent
+  );
+}
+
+/* =========================================================
+   H3 — ESTILO SUBCABEÇALHO DA WIKI/FANDOM
+   Exemplo: SACRIFÍCIOS CORPORAIS
+   ========================================================= */
+
+.article-section h3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin: 38px 0 24px;
+  padding: 0 0 8px 14px;
+
+  color: #b9d9ff;
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.25;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  background: transparent;
+  border: none;
+  border-left: 4px solid #80c3ff;
+  border-bottom: 2px dashed rgba(128, 195, 255, 0.55);
+  box-shadow: none;
+}
+
+.article-section h3::before {
+  content: none;
+}
+
+.article-section h3::after {
+  content: none;
+}
+
+/* H4 menor, para divisões internas abaixo do H3 */
+.article-section h4 {
+  margin: 26px 0 12px;
+  padding-left: 14px;
+
+  color: #f0d36f;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  border-left: 4px solid #d8b765;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 640px) {
+  .article-section h2::before,
+  .article-section h2::after {
+    width: 32px;
+    margin: 0 8px;
+  }
+
+  .article-section h3 {
+    font-size: 1rem;
+  }
+}
