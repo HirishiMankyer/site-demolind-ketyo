@@ -1658,3 +1658,245 @@ h2 {
     font-size: 1.18rem;
   }
 }
+
+/* =========================================================
+   AJUSTE FINAL — H2 MAIOR, H3/H4 INVERTIDOS E H5 REFINADO
+   ========================================================= */
+
+/* H2 — aba superior maior e mais imponente */
+.article-section h2 {
+  top: -44px;
+
+  min-width: 340px;
+  max-width: 90%;
+  padding: 14px 58px 12px;
+
+  color: #fff8e8;
+  font-size: clamp(1.85rem, 3.4vw, 2.65rem);
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--h2-blue-2, #0b4f8f),
+      var(--h2-blue-1, #082f59)
+    );
+
+  border: 1px solid rgba(176, 215, 255, 0.62);
+  border-bottom: 1px solid rgba(176, 215, 255, 0.35);
+  border-radius: 22px 22px 0 0;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 10px 22px rgba(0, 0, 0, 0.32);
+
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.45),
+    0 0 16px rgba(176, 215, 255, 0.18);
+}
+
+/* Ajuste da caixa para comportar o H2 maior */
+.article-section {
+  margin-top: 88px;
+  padding-top: 84px;
+}
+
+/* H3 — agora recebe o antigo estilo do H4: linha tracejada */
+.article-section h3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin: 34px 0 22px;
+  padding: 0 0 8px 14px;
+
+  color: #b9d9ff;
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.25;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+
+  background: transparent;
+  border: none;
+  border-left: 4px solid #80c3ff;
+  border-bottom: 2px dashed rgba(128, 195, 255, 0.55);
+
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.article-section h3::before,
+.article-section h3::after {
+  content: none;
+}
+
+/* H4 — agora recebe o antigo estilo do H3: faixa principal menor */
+.article-section h4 {
+  position: relative;
+  display: inline-block;
+
+  width: auto;
+  margin: 32px 0 24px;
+  padding: 9px 24px 9px 18px;
+
+  color: #061526;
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.15;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #b7daf7, #9fc9ec);
+  border: 1px solid rgba(5, 22, 39, 0.75);
+  border-bottom-color: rgba(5, 22, 39, 0.95);
+  border-radius: 4px 0 0 4px;
+
+  box-shadow: none;
+}
+
+.article-section h4::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+
+  width: 8px;
+  height: 8px;
+
+  border-top: 1px solid rgba(5, 22, 39, 0.75);
+  border-left: 1px solid rgba(5, 22, 39, 0.75);
+  background: #0e0f1d;
+  transform: translate(-1px, -1px);
+}
+
+.article-section h4::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: -1px;
+
+  width: min(360px, 38vw);
+  height: 1px;
+
+  background: rgba(176, 215, 255, 0.65);
+}
+
+/* H5 — subtítulo sequente do H4, menor e mais discreto */
+.article-section h5 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  margin: 24px 0 16px;
+  padding: 6px 20px 6px 14px;
+
+  color: #d8ecff;
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+  line-height: 1.25;
+  font-weight: 850;
+  font-style: italic;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 75, 125, 0.72),
+      rgba(20, 103, 162, 0.52)
+    );
+
+  border-left: 4px solid #80c3ff;
+  border-top: 1px solid rgba(128, 195, 255, 0.38);
+  border-bottom: 1px solid rgba(128, 195, 255, 0.38);
+  border-right: none;
+  border-radius: 0 12px 12px 0;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.article-section h5::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: -1px;
+
+  width: min(280px, 30vw);
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(128, 195, 255, 0.65),
+    transparent
+  );
+}
+
+.article-section h5::after {
+  content: none;
+}
+
+/* H6 permanece como nível menor, com marcador de bolinhas */
+.article-section h6 {
+  margin: 22px 0 14px;
+  padding: 0 0 7px 34px;
+
+  color: #d7ecff;
+  font-size: clamp(0.86rem, 1.15vw, 0.96rem);
+  font-weight: 850;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  border-bottom: 2px dashed rgba(128, 195, 255, 0.36);
+}
+
+/* Espaçamentos entre níveis */
+.article-section h2 + h3,
+.article-section h2 + h4,
+.article-section h2 + p {
+  margin-top: 0;
+}
+
+.article-section h3 + h4 {
+  margin-top: 8px;
+}
+
+.article-section h4 + h5 {
+  margin-top: 4px;
+}
+
+.article-section h5 + h6 {
+  margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+  .article-section {
+    margin-top: 78px;
+    padding-top: 76px;
+  }
+
+  .article-section h2 {
+    top: -38px;
+    min-width: 240px;
+    padding: 12px 30px 10px;
+    font-size: 1.55rem;
+    letter-spacing: 0.07em;
+  }
+
+  .article-section h4::after {
+    width: 110px;
+  }
+
+  .article-section h5::before {
+    width: 80px;
+  }
+}
