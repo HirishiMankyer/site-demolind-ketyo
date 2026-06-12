@@ -1570,3 +1570,91 @@ h2 {
     margin: 0 8px;
   }
 }
+
+/* =========================================================
+   CORREÇÃO — H2 COMO ABA ACIMA DA CAIXA DO TÓPICO
+   ========================================================= */
+
+.article-section {
+  position: relative;
+  overflow: visible;
+  margin-top: 70px;
+  padding-top: 74px;
+}
+
+/* H2 — aba superior fora da caixa */
+.article-section h2 {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 260px;
+  max-width: 85%;
+  margin: 0;
+  padding: 10px 44px 9px;
+
+  color: #fff8e8;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--h2-blue-2, #0b4f8f),
+      var(--h2-blue-1, #082f59)
+    );
+
+  border: 1px solid rgba(176, 215, 255, 0.55);
+  border-bottom: 1px solid rgba(176, 215, 255, 0.35);
+  border-radius: 18px 18px 0 0;
+
+  box-shadow:
+    0 -2px 0 rgba(255, 255, 255, 0.08) inset,
+    0 8px 18px rgba(0, 0, 0, 0.28);
+
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.42);
+  z-index: 5;
+}
+
+.article-section h2::before,
+.article-section h2::after {
+  content: none;
+}
+
+/* H3 — faixa grande dentro da caixa */
+.article-section h3 {
+  margin-top: 0;
+}
+
+/* Quando o H2 vier seguido diretamente de parágrafo */
+.article-section h2 + p {
+  margin-top: 0;
+}
+
+/* Quando o H2 vier seguido de H3 */
+.article-section h2 + h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .article-section {
+    margin-top: 62px;
+    padding-top: 66px;
+  }
+
+  .article-section h2 {
+    top: -30px;
+    min-width: 210px;
+    padding-inline: 28px;
+    font-size: 1.18rem;
+  }
+}
