@@ -1335,3 +1335,238 @@ h2 {
     font-size: 1rem;
   }
 }
+
+/* =========================================================
+   CABEÇALHOS H2–H6 — MODELO EM CAMADAS DO VERBETE
+   ========================================================= */
+
+/* H2 — aba superior do tópico */
+.article-section h2 {
+  position: relative;
+  display: table;
+
+  margin: 0 auto 0;
+  padding: 10px 46px 8px;
+
+  color: #fff8e8;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+
+  background:
+    linear-gradient(180deg, rgba(18, 74, 126, 0.98), rgba(8, 42, 78, 0.98));
+  border: 1px solid rgba(176, 215, 255, 0.55);
+  border-bottom: none;
+  border-radius: 18px 18px 0 0;
+
+  box-shadow:
+    0 -2px 0 rgba(255, 255, 255, 0.08) inset,
+    0 8px 18px rgba(0, 0, 0, 0.22);
+
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.42);
+  z-index: 2;
+}
+
+.article-section h2::before,
+.article-section h2::after {
+  content: none;
+}
+
+/* H3 — faixa principal longa abaixo da aba */
+.article-section h3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 0 0 34px;
+  padding: 13px 24px;
+
+  color: #fff8e8;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.1;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--h2-blue-1, #082f59),
+      var(--h2-blue-2, #0b4f8f) 50%,
+      var(--h2-blue-3, #083866)
+    );
+
+  border: 1px solid rgba(176, 215, 255, 0.42);
+  border-radius: 16px 16px 0 0;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.2);
+
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.42);
+}
+
+.article-section h3::before,
+.article-section h3::after {
+  content: "◇";
+  position: static;
+
+  width: auto;
+  height: auto;
+  margin: 0 18px;
+
+  color: rgba(216, 234, 255, 0.85);
+  background: transparent;
+  border: none;
+  transform: none;
+  box-shadow: none;
+  font-size: 0.85em;
+}
+
+/* Cantos decorativos da faixa principal */
+.article-section h3 .heading-corner {
+  display: none;
+}
+
+/* H4 — subtítulo com barra lateral e linha tracejada */
+.article-section h4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin: 34px 0 22px;
+  padding: 0 0 8px 14px;
+
+  color: #b9d9ff;
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.25;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  background: transparent;
+  border: none;
+  border-left: 4px solid #80c3ff;
+  border-bottom: 2px dashed rgba(128, 195, 255, 0.55);
+
+  box-shadow: none;
+}
+
+.article-section h4::before,
+.article-section h4::after {
+  content: none;
+}
+
+/* H5 — pequena etiqueta com ponta inclinada */
+.article-section h5 {
+  position: relative;
+  display: inline-block;
+
+  margin: 28px 0 18px;
+  padding: 7px 28px 7px 14px;
+
+  color: #061526;
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  line-height: 1.25;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #b7daf7, #9fc9ec);
+  border: 1px solid rgba(5, 22, 39, 0.75);
+  border-radius: 4px 0 0 4px;
+}
+
+.article-section h5::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -24px;
+
+  width: 24px;
+  height: calc(100% + 2px);
+
+  background: linear-gradient(135deg, #9fc9ec 0%, #9fc9ec 50%, transparent 51%);
+  border-top: 1px solid rgba(5, 22, 39, 0.75);
+  border-right: 1px solid transparent;
+}
+
+/* H6 — marcador com bolinhas e linha tracejada */
+.article-section h6 {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin: 26px 0 16px;
+  padding: 0 0 7px 34px;
+
+  color: #d7ecff;
+  font-size: clamp(0.88rem, 1.2vw, 0.98rem);
+  line-height: 1.25;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  border-bottom: 2px dashed rgba(128, 195, 255, 0.42);
+}
+
+.article-section h6::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2px;
+
+  width: 20px;
+  height: 30px;
+
+  background-image: radial-gradient(circle, #80c3ff 2px, transparent 3px);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  opacity: 0.9;
+}
+
+.article-section h6::after {
+  content: none;
+}
+
+/* Espaçamento quando H2 e H3 forem usados juntos */
+.article-section h2 + h3 {
+  margin-top: 0;
+}
+
+.article-section h3 + p {
+  margin-top: 0;
+}
+
+.article-section h4 + p,
+.article-section h5 + p,
+.article-section h6 + p {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .article-section h2 {
+    padding-inline: 26px;
+  }
+
+  .article-section h3 {
+    font-size: 1.35rem;
+    letter-spacing: 0.05em;
+  }
+
+  .article-section h3::before,
+  .article-section h3::after {
+    margin: 0 8px;
+  }
+}
