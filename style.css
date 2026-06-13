@@ -2222,3 +2222,97 @@ h2 {
     padding-top: 4px;
   }
 }
+
+/* =========================================================
+   AJUSTE DA INFOBOX — COLUNA DE RÓTULOS MAIS LARGA
+   ========================================================= */
+
+/* Aumenta levemente a largura geral da infobox */
+.article-layout {
+  grid-template-columns: minmax(0, 1fr) 390px;
+}
+
+/* Mantém todas as tabelas alinhadas */
+.infobox-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Coluna dos rótulos mais larga */
+.infobox-table th {
+  width: 62%;
+  min-width: 62%;
+  max-width: 62%;
+
+  color: #f0d36f;
+  text-align: left;
+  font-weight: 800;
+
+  background: rgba(216, 183, 101, 0.045);
+  border-right: 1px solid rgba(216, 183, 101, 0.16);
+
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+/* Coluna das informações menor, mas ainda suficiente para "Não informado" */
+.infobox-table td {
+  width: 38%;
+  min-width: 38%;
+  max-width: 38%;
+
+  color: #f4efe3;
+  text-align: left;
+
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+/* Padroniza as células */
+.infobox-table th,
+.infobox-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(216, 183, 101, 0.14);
+  vertical-align: middle;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Mantém responsivo em telas menores */
+@media (max-width: 980px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .infobox {
+    max-width: 560px;
+    margin: 0 auto 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .infobox-table {
+    table-layout: auto;
+  }
+
+  .infobox-table th,
+  .infobox-table td {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .infobox-table th {
+    border-right: none;
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .infobox-table td {
+    padding-top: 4px;
+  }
+}
