@@ -2316,3 +2316,31 @@ h2 {
     padding-top: 4px;
   }
 }
+
+/* =========================================================
+   CORREÇÃO — LINHA DO H3 NÃO ULTRAPASSAR A CAIXA
+   ========================================================= */
+
+.article-section h3 {
+  max-width: 100%;
+}
+
+/* Linha lateral do H3 mais curta e segura */
+.article-section h3::after {
+  width: clamp(80px, 18vw, 260px);
+  max-width: 260px;
+}
+
+/* Ajuste em telas médias, onde a infobox fica próxima */
+@media (max-width: 1200px) {
+  .article-section h3::after {
+    width: clamp(60px, 12vw, 180px);
+  }
+}
+
+/* Ajuste em telas pequenas */
+@media (max-width: 760px) {
+  .article-section h3::after {
+    width: 80px;
+  }
+}
