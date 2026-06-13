@@ -2120,3 +2120,105 @@ h2 {
     font-size: 0.98rem;
   }
 }
+
+/* =========================================================
+   CORREÇÃO DA INFOBOX — ALINHAMENTO DAS COLUNAS E CABEÇALHOS
+   ========================================================= */
+
+/* Mantém todas as tabelas da infobox com a mesma divisão interna */
+.infobox-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Coluna dos rótulos sempre com a mesma largura */
+.infobox-table th {
+  width: 46%;
+  min-width: 46%;
+  max-width: 46%;
+
+  color: #f0d36f;
+  text-align: left;
+  font-weight: 800;
+
+  background: rgba(216, 183, 101, 0.045);
+  border-right: 1px solid rgba(216, 183, 101, 0.16);
+
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Coluna das informações sempre alinhada com a coluna de rótulos */
+.infobox-table td {
+  width: 54%;
+  min-width: 54%;
+  max-width: 54%;
+
+  color: #f4efe3;
+  text-align: left;
+
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Padroniza as linhas de todas as tabelas */
+.infobox-table th,
+.infobox-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(216, 183, 101, 0.14);
+  vertical-align: middle;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Cabeçalhos da infobox centralizados */
+.infobox-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 13px 16px;
+
+  color: #0b0c14;
+  background: linear-gradient(90deg, #d8b765, #f0d36f, #d8b765);
+
+  font-size: 0.86rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  border-top: 1px solid rgba(255, 246, 223, 0.35);
+  border-bottom: 1px solid rgba(216, 183, 101, 0.35);
+}
+
+/* Também centraliza o título principal da infobox */
+.infobox-title {
+  text-align: center;
+}
+
+/* Evita quebra visual estranha em telas menores */
+@media (max-width: 640px) {
+  .infobox-table {
+    table-layout: auto;
+  }
+
+  .infobox-table th,
+  .infobox-table td {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .infobox-table th {
+    border-right: none;
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .infobox-table td {
+    padding-top: 4px;
+  }
+}
